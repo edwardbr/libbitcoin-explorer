@@ -37,3 +37,4 @@ libbitcoin_explorer_test_runner.sh.trs
 test-suite.log
 test.log
 test/libbitcoin_explorer_test
+build
