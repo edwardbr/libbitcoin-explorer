@@ -7,30 +7,30 @@ hunter_config(secp256k1
 
 hunter_config(libbitcoin-system
     URL https://github.com/edwardbr/libbitcoin-system/archive/master.tar.gz
-    SHA1 d1de11c54e1b387ee74809cfa00e4b35331a002b
+    SHA1 e23ed1d464841aaf3a520f76db662b9f136c7261
     CMAKE_ARGS
-        with-icu=YES
+        with-icu=NO
         )
 
 hunter_config(libbitcoin-network
     URL https://github.com/edwardbr/libbitcoin-network/archive/master.tar.gz
-    SHA1 5c04204a22b59e893c6d6dede25966cb4d04b0a8
+    SHA1 6fb03a39132d94bed5f15ce73f87f610bab0b1a6
     CMAKE_ARGS
-        with-icu=YES
+        with-icu=NO
         )        
 
 hunter_config(libbitcoin-protocol
     URL https://github.com/edwardbr/libbitcoin-protocol/archive/master.tar.gz
     SHA1 72438ec06c214a4a58fd31dda5e95bfeca03a89f
     CMAKE_ARGS
-        with-icu=YES
+        with-icu=NO
         )
 
 hunter_config(libbitcoin-client
     URL https://github.com/edwardbr/libbitcoin-client/archive/master.tar.gz
-    SHA1 b5ea77d22a57c32a69d24611b8cddbe1d3198904
+    SHA1 ed89f89c1faf631af10ce2fdb2571434a18ace1e
     CMAKE_ARGS
-        with-icu=YES
+        with-icu=NO
         )
 
 hunter_config(ICU VERSION 63.1-p5)

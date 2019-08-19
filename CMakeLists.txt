@@ -1,6 +1,6 @@
 # Copyright (c) 2017 The Bitcoin developers
 
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.13)
 
 
 set(CMAKE_VERBOSE_MAKEFILE ON)
@@ -25,8 +25,6 @@ project(libbitcoin-explorer VERSION 0.1)
 
 include(CTest)
 include(GNUInstallDirs)
-
-add_definitions( -DSYSCONFDIR="${SYSCONFDIR}" )
 
 # Implement -Dbash-completiondir and output ${bash-completiondir} and declare bash-completiondir.
 #------------------------------------------------------------------------------
@@ -246,6 +244,8 @@ target_compile_options(${PROJECT_NAME} PRIVATE
 
     # Clean up bx generated code.
     "-Wno-unused-parameter"
+
+    "-DSYSCONFDIR=\"${CMAKE_INSTALL_SYSCONFDIR}\""
 )
 
 
