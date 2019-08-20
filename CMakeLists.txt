@@ -287,6 +287,34 @@ if (with-console)
         "console/libbitcoin.ico"
         "console/main.cpp" )
 
+    # libsecp256k1 use a different set of flags.
+    target_compile_options(bx PRIVATE
+        "-Wall" 
+
+        # Warn on extra stuff.
+        "-Wextra" 
+
+        # Be really annoying.
+        "-Wpedantic" 
+
+        # Disallow warning on style order of declarations.
+        "-Wno-reorder" 
+
+        # Suppress warning for incomplete field initialization.
+        "-Wno-missing-field-initializers" 
+
+        # Conform to style.
+        "-Wno-missing-braces" 
+
+        # Ignore comments within comments or commenting of backslash extended lines.
+        "-Wno-comment" 
+
+        # Clean up bx generated code.
+        "-Wno-unused-parameter"
+
+        "-DSYSCONFDIR=\"${CMAKE_INSTALL_SYSCONFDIR}\""
+    )
+
 #     bx project specific include directories.
 #------------------------------------------------------------------------------
     target_include_directories( bx PRIVATE
@@ -409,6 +437,33 @@ if (with-tests)
         "test/commands/wrap-decode.cpp"
         "test/commands/wrap-encode.cpp"
         "test/config/address.cpp" )
+
+    target_compile_options(${PROJECT_NAME}-test PRIVATE
+        "-Wall" 
+
+        # Warn on extra stuff.
+        "-Wextra" 
+
+        # Be really annoying.
+        "-Wpedantic" 
+
+        # Disallow warning on style order of declarations.
+        "-Wno-reorder" 
+
+        # Suppress warning for incomplete field initialization.
+        "-Wno-missing-field-initializers" 
+
+        # Conform to style.
+        "-Wno-missing-braces" 
+
+        # Ignore comments within comments or commenting of backslash extended lines.
+        "-Wno-comment" 
+
+        # Clean up bx generated code.
+        "-Wno-unused-parameter"
+
+        "-DSYSCONFDIR=\"${CMAKE_INSTALL_SYSCONFDIR}\""
+    )
 
     add_test( NAME ${PROJECT_NAME}-test COMMAND ${PROJECT_NAME}-test
             --run_test=generated,obsolete,offline,config,stub
